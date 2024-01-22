@@ -19,7 +19,6 @@ var config = {
   passwordlength: 0,
 };
 
-// Write password to the #password input
 function writePassword() {
   var password = generatePassword();
   var passwordText = document.querySelector("#password");
@@ -27,9 +26,9 @@ function writePassword() {
   passwordText.value = password;
 }
 function generatePassword() {
-  while (!(opt >= 2 && opt <= 10)) {
-    opt = prompt("how long do you want your password to be (between 2-10)");
-    if (!(opt >= 2 && opt <= 10)) {
+  while (!(opt >= 8 && opt <= 128)) {
+    opt = prompt("how long do you want your password to be (between 8-128)");
+    if (!(opt >= 8 && opt <= 128)) {
       window.alert("invalid input");
     }
     console.log(opt);
